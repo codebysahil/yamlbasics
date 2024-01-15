@@ -1,0 +1,36 @@
+trigger:
+- main
+pool:
+  vmImage: ubuntu-latest
+stages:
+- stage: BuildApp
+  displayName: Build and app stage 1
+  jobs:
+  - job: BuildFrontEnd
+    displayName: build front end job 1
+    steps:
+    - script: echo building frontend app
+      displayName: build-frontend app step displayName
+    - script: echo running unit test for frontend app
+      displayName: unit test for frontend job
+  - job: BuildBackEnd
+    displayName: build backend job displayname
+    steps:
+    - script: echo building backend app
+      displayName: this is a displayname for script under job buildBackend  
+    - script: echo running unit test for backend app
+      displayName: this is a displayName for the script
+
+- stage: DeployDev
+  displayName: DeploytoDev stage display displayName
+  jobs:
+  - job: Deploy to dev Env
+    steps:
+    - script: echo deploy frontend app to dev
+      displayName: name for deploy to dev env first script
+  - job: DeployBackend
+    displayName: Deploy backend job
+    steps:
+    - script: echo deploying backend to dev
+      displayName: deploy backend script 1
+  
