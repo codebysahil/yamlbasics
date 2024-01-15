@@ -22,7 +22,7 @@ stages:
       displayName: this is a displayName for the script
 
 - stage: DeployDev
-  displayName: DeploytoDev stage display displayName
+  displayName: test
   jobs:
   - job: Deploy to dev Env
     steps:
