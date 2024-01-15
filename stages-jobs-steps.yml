@@ -24,7 +24,7 @@ stages:
 - stage: DeployDev
   displayName: test
   jobs:
-  - job: Deploy to dev Env
+  - job: testmyname
     steps:
     - script: echo deploy frontend app to dev
       displayName: name for deploy to dev env first script
