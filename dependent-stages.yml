@@ -8,7 +8,7 @@ stages:
   - job: TestJob
     steps:
     - script: echo testing-app
-- stage: dev
+- stage: dte
   jobs:
   - job: deploytodev
     steps:
@@ -19,6 +19,9 @@ stages:
     steps:
     - script: echo deploy to blue env
 - stage: production
+  dependsOn:
+  - Test
+  - Blue  
   jobs:
   - job: deploytoprod
     steps:
